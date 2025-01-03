@@ -8,10 +8,11 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
-dist-ssr
+# dist
+# dist-ssr
 *.local
-
+colorTemplate.txt
+ContactLogicExplained.txt
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

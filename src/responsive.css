@@ -1,6 +1,6 @@
 @media (min-width: 481px) and (max-width: 768px) {
   body {
-    overflow: hidden;
+    overflow-x: hidden;
   }
   /* header============ */
   .header {
@@ -14,7 +14,7 @@
   }
   /* navbar============= */
   #Navbar {
-    height: 8vh;
+    height: 9vh;
   }
   .navbar-wrapper {
     font-size: small;
@@ -26,21 +26,21 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    width: 50%;
+    width: 0;
     right: 0;
     top: 3vh;
     height: 98vh;
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in;
+    /* transform: translateX(100%); */
+    transition: 0.5s;
     background-color: #100f1b;
-    display: none;
+    /* display: none; */
   }
   .nav-links li {
     margin-block: 15px;
   }
-  /* .navbar ul li {
-    opacity: 0;
-  } */
+  .li-non {
+    display: none;
+  }
   .burger {
     display: block;
     z-index: 10;
@@ -49,7 +49,7 @@
   /* about ================*/
   #About {
     padding-top: 30px;
-    height: 165vh;
+    height: auto;
   }
   .about-wrapper {
     flex-direction: column;
@@ -78,7 +78,7 @@
   /* Project ======================== */
   #Project {
     padding-top: 50px;
-    height: 135vh;
+    height: auto;
   }
   .project-wrapper h4 {
     left: 15%;
@@ -87,15 +87,29 @@
     margin: 1rem;
   }
   .project-list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   .project-list #project-item {
-    width: 30vh;
-    height: 34vh;
+    width: auto;
+    height: auto;
+  }
+
+  /* Contact ================== */
+  .contact {
+    height: auto;
+  }
+  .contact-wrapper {
+    width: 80%;
+  }
+  .form-wrapper button {
+    width: 38%;
   }
 }
 .nav-active {
-  transform: translateX(0%);
+  width: 48%;
+}
+.li-active {
+  display: flex;
 }
 .toggle .line1 {
   transform: rotate(-45deg) translate(-5px, 6px);
@@ -105,4 +119,45 @@
 }
 .toggle .line3 {
   transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (min-width: 770px) and (max-width: 1024px) {
+  #About {
+    height: auto;
+  }
+  /* navbar =========== */
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 0;
+    right: 0;
+    top: 3vh;
+    height: 98vh;
+    /* transform: translateX(100%); */
+    transition: 0.5s;
+    background-color: #100f1b;
+    /* display: none; */
+  }
+  .nav-links li {
+    margin-block: 15px;
+  }
+  .li-non {
+    display: none;
+  }
+  .burger {
+    display: block;
+    z-index: 10;
+  }
+
+  .contact {
+    height: auto;
+  }
+  .contact-wrapper {
+    width: 80%;
+  }
+  .form-wrapper button {
+    width: 38%;
+  }
 }

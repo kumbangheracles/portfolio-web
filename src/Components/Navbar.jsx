@@ -5,6 +5,9 @@ export default function Navbar() {
   function toggleNav() {
     setNavActive(!navActive);
   }
+  function rmClass() {
+    setNavActive(false);
+  }
   return (
     <section className="navbar" id="Navbar">
       <div className="navbar-wrapper">
@@ -13,8 +16,13 @@ export default function Navbar() {
         </div>
         <ul className={`nav-links ${navActive ? "nav-active" : ""}`}>
           {NavData.map((item) => (
-            <li key={item.id}>
-              <a href={item.href}>{item.name}</a>
+            <li
+              key={item.id}
+              className={`li-non ${navActive ? "li-active" : ""}`}
+            >
+              <a href={item.href} onClick={rmClass}>
+                {item.name}
+              </a>
             </li>
           ))}
         </ul>
