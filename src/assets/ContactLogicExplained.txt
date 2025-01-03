@@ -1,0 +1,152 @@
+Berikut penjelasan lengkap tentang logika yang digunakan dalam **state function** di komponen ini:
+
+---
+
+### **State Definition**
+```javascript
+const [formData, setFormData] = useState({
+  firstName: "",
+  lastName: "",
+  email: "",
+  message: "",
+});
+const [status, setStatus] = useState("");
+```
+
+1. **`formData`:**
+   - **Tujuan:** Menyimpan nilai dari input form (`firstName`, `lastName`, `email`, dan `message`).
+   - **Default Value:** Semua kunci diinisialisasi dengan string kosong (`""`).
+   - **Fungsi:** Menjaga data dari form tetap tersinkronisasi dengan state komponen, sehingga form menjadi **kontrol penuh** (controlled form).
+
+2. **`setFormData`:**
+   - **Fungsi:** Digunakan untuk memperbarui nilai `formData` saat input form berubah (di-trigger oleh `handleChange`).
+
+3. **`status`:**
+   - **Tujuan:** Menyimpan informasi tentang status pengiriman data (misalnya, berhasil, gagal, atau error).
+   - **Default Value:** Diinisialisasi sebagai string kosong (`""`).
+   - **Fungsi:** Menampilkan pesan status (feedback) kepada pengguna setelah form dikirim.
+
+4. **`setStatus`:**
+   - **Fungsi:** Digunakan untuk memperbarui nilai `status` berdasarkan hasil pengiriman data ke Google Sheets.
+
+---
+
+### **State Function Logic**
+
+#### 1. **`handleChange` Function**
+```javascript
+const handleChange = (e) => {
+  const { name, value } = e.target;
+  setFormData({ ...formData, [name]: value });
+};
+```
+- **Input:** Event `e` yang dipicu saat pengguna mengetik di input/textarea.
+- **Logika:**
+  1. `e.target.name`: Nama field input/textarea (`firstName`, `lastName`, `email`, atau `message`).
+  2. `e.target.value`: Nilai yang dimasukkan pengguna.
+  3. `setFormData`:
+     - Membuat salinan dari `formData` menggunakan spread operator (`{ ...formData }`).
+     - Memperbarui field tertentu sesuai `name` dengan nilai baru (`[name]: value`).
+- **Hasil:**
+  Nilai input akan diperbarui secara real-time di `formData`.
+
+---
+
+#### 2. **`handleSubmit` Function**
+```javascript
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetch(
+      "https://script.google.com/macros/s/AKfycbwAofKNO7NNlSk3M1ER_lNwSJoREsh3AzU2gv9YKq2kKsGOm08vSnpEQmRXGxj4TdYGlQ/exec",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    );
+    const result = await response.json();
+
+    if (result.status == "success") {
+      setStatus("Message sent successfully");
+      setFormData({ firstName: "", lastName: "", email: "", message: "" });
+    } else {
+      setStatus("Failed to send message");
+    }
+  } catch (error) {
+    console.error("Error: ", error);
+    setStatus("Error submitting data. Please try again later.");
+  }
+};
+```
+- **Input:** Event `e` saat form disubmit.
+- **Logika:**
+  1. **Prevent Default Behavior:**
+     ```javascript
+     e.preventDefault();
+     ```
+     - Mencegah perilaku default form (refresh halaman setelah submit).
+
+  2. **Kirim Data ke Google Sheets:**
+     ```javascript
+     const response = await fetch("URL_GOOGLE_SCRIPT", { method, headers, body });
+     ```
+     - Menggunakan `fetch` untuk mengirimkan data ke URL Google Apps Script.
+     - **`headers`:** Menentukan tipe data yang dikirim (`application/json`).
+     - **`body`:** Data form (`formData`) dikirim dalam format JSON.
+
+  3. **Cek Status Respons:**
+     ```javascript
+     const result = await response.json();
+     if (result.status === "success") {
+       setStatus("Message sent successfully");
+       setFormData({ firstName: "", lastName: "", email: "", message: "" });
+     } else {
+       setStatus("Failed to send message");
+     }
+     ```
+     - Jika respons dari server memiliki status `"success"`, tampilkan pesan sukses dan reset form.
+     - Jika tidak, tampilkan pesan kegagalan.
+
+  4. **Tangani Error:**
+     ```javascript
+     catch (error) {
+       console.error("Error: ", error);
+       setStatus("Error submitting data. Please try again later.");
+     }
+     ```
+     - Jika ada error dalam proses pengiriman (misalnya, koneksi buruk), tampilkan pesan error.
+
+- **Hasil:**
+  - Status pengiriman (berhasil/gagal/error) diperbarui di `status`.
+  - Input form direset jika pengiriman berhasil.
+
+---
+
+#### 3. **Rendering Status**
+```javascript
+{status && <p>{status}</p>}
+```
+- **Logika:**
+  - Jika nilai `status` tidak kosong (`true`), maka render `<p>` dengan teks status.
+- **Fungsi:**
+  Memberikan umpan balik visual kepada pengguna.
+
+---
+
+### **Ringkasan**
+1. **`formData` dan `setFormData`:**
+   - Mengelola data form secara dinamis.
+   - Diperbarui setiap kali pengguna mengetik di input/textarea.
+
+2. **`status` dan `setStatus`:**
+   - Menyimpan dan menampilkan status pengiriman data.
+   - Diupdate berdasarkan hasil pengiriman ke Google Sheets.
+
+3. **State Functions:**
+   - `handleChange`: Memperbarui `formData` secara dinamis.
+   - `handleSubmit`: Mengirim data form ke Google Sheets dan memperbarui `status`.
+
+Semua bagian saling bekerja sama untuk membuat form yang dinamis dan memberikan umpan balik kepada pengguna. 😊
