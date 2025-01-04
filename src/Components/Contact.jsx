@@ -8,45 +8,69 @@ export default function Contact() {
     message: "",
   });
   const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  const validateForm = () => {
+    if (!formData.firstName.trim()) return "First name is required.";
+    if (!formData.lastName.trim()) return "Last name is required.";
+    if (!formData.email.trim()) return "Email is required.";
+    if (!formData.message.trim()) return "Message is required.";
+    if (!/\S+@\S+\.\S+/.test(formData.email)) return "Invalid email address.";
+    return null;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus("");
+    setLoading(true);
+
+    const validationError = validateForm();
+    if (validationError) {
+      setStatus(validationError);
+      setLoading(false);
+      return;
+    }
+
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbx7DxKjSdVp3QpNq-oASF-vi7bLIMw2aFbXzm7dhQsqW-K3LRslbFjVlwz21ZC-k4Pp5w/exec",
+        "https://script.google.com/macros/s/AKfycbycK1K5NOvu0WJUJ_O9qb6lCEW4RQBZXqu9Q5VWnAgiR99Eo-tThNcOqVz9Uz7QIYSW7w/exec",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
+          // mode: "no-cors",
         }
       );
       const result = await response.json();
 
       if (result.status === "success") {
-        setStatus("Message sent successfully");
+        setStatus("Message sent successfully.");
         setFormData({ firstName: "", lastName: "", email: "", message: "" });
       } else {
-        setStatus("Failed to send message");
+        setStatus("Failed to send message. Please try again.");
       }
     } catch (error) {
       console.error("Error: ", error);
-      setStatus("Error submitting data. Please try again later. ");
+      setStatus("Error submitting data. Please try again later.");
+    } finally {
+      setLoading(false);
     }
   };
+
   return (
     <section className="contact" id="Contact">
       <div className="contact-wrapper">
         <h4>Contact</h4>
-        <form action="" className="form-contact" onSubmit={handleSubmit}>
+        <form className="form-contact" onSubmit={handleSubmit}>
           <div className="form-wrapper">
-            <label htmlFor="first-name">First Name :</label>
+            <label htmlFor="first-name">First Name:</label>
             <input
               type="text"
               id="first-name"
@@ -57,36 +81,42 @@ export default function Contact() {
             />
           </div>
           <div className="form-wrapper">
-            <label htmlFor="last-name">Last Name :</label>
+            <label htmlFor="last-name">Last Name:</label>
             <input
               type="text"
               id="last-name"
               name="lastName"
-              onChange={handleChange}
               value={formData.lastName}
+              onChange={handleChange}
               required
             />
           </div>
           <div className="form-wrapper">
-            <label htmlFor="email">Email :</label>
+            <label htmlFor="email">Email:</label>
             <input
               type="email"
               id="email"
               name="email"
-              onChange={handleChange}
               value={formData.email}
+              onChange={handleChange}
               required
             />
           </div>
           <div className="form-wrapper">
+            <label htmlFor="message">Message:</label>
             <textarea
+              id="message"
               name="message"
-              id="text-message-contact"
-              placeholder="Write something . . . ."
-              onChange={handleChange}
+              placeholder="Write something..."
               value={formData.message}
-            ></textarea>
-            <button type="submit">Submit</button>
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-wrapper">
+            <button type="submit" disabled={loading}>
+              {loading ? "Sending..." : "Submit"}
+            </button>
           </div>
         </form>
         {status && <p>{status}</p>}
