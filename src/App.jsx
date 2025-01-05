@@ -4,6 +4,8 @@ import Navbar from "./Components/Navbar";
 import About from "./Components/About";
 import Project from "./Components/Project";
 import Contact from "./Components/Contact";
+import Footer from "./Components/Footer";
+import TestContact from "./Components/TestContact";
 function App() {
   return (
     <>
@@ -11,7 +13,10 @@ function App() {
       <Navbar />
       <About />
       <Project />
-      <Contact />
+      {/* <Contact /> */}
+      <TestContact />
+
+      <Footer />
     </>
   );
 }

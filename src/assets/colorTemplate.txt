@@ -47,3 +47,73 @@ Saya dapat memberikan rekomendasi warna yang lebih spesifik dan sesuai dengan ke
 **Semoga informasi ini bermanfaat!**
 
 **Apakah Anda ingin saya memberikan contoh kombinasi warna yang lebih spesifik berdasarkan tema atau gaya tertentu?**
+
+
+
+
+# Change Mode
+Untuk membuat mode dengan latar belakang warna yang "berlawanan" (kontras), Anda bisa mempertimbangkan konsep **kontras warna** dan **harmoni warna**. Dalam hal ini, kita akan memilih warna berdasarkan *color theory* dengan menggunakan kombinasi berikut:
+
+### Warna Berlawanan (Kontras Tinggi)
+Warna-warna yang berlawanan diambil dari **color wheel**, sering kali dikenal sebagai **complementary colors**. Warna ini memberikan kesan yang tajam dan jelas, cocok untuk mode terang vs gelap.
+
+#### Warna Asli:
+1. **#201e30** (gelap abu-abu kebiruan)
+2. **#333a46** (abu-abu tua kebiruan)
+3. **#253441** (abu-abu kebiruan sedikit gelap)
+4. **#100f1b** (ungu tua gelap)
+5. **#0c0615** (hitam keunguan gelap)
+
+#### Warna Berlawanan:
+1. **#e0e1cf** (krem terang kehijauan - lawan dari #201e30)
+2. **#ccdadc** (biru muda pucat - lawan dari #333a46)
+3. **#cde8e9** (biru muda kehijauan - lawan dari #253441)
+4. **#eee6f5** (lavender terang - lawan dari #100f1b)
+5. **#f3eafa** (ungu muda terang - lawan dari #0c0615)
+
+---
+
+### Warna Sinkron (Harmoni Warna)
+Warna sinkron adalah warna yang berada dalam spektrum yang sama tetapi dengan nilai pencahayaan yang berbeda (tone/gradient). Ini cocok untuk mode yang tidak sepenuhnya berlawanan tetapi tetap terlihat harmonis.
+
+#### Warna Asli:
+1. **#201e30**
+2. **#333a46**
+3. **#253441**
+4. **#100f1b**
+5. **#0c0615**
+
+#### Warna Sinkron:
+1. **#2a283d** (biru tua sedikit terang - sinkron dengan #201e30)
+2. **#3e4554** (abu-abu biru terang - sinkron dengan #333a46)
+3. **#324e5e** (biru kehijauan lebih terang - sinkron dengan #253441)
+4. **#1a1827** (ungu gelap lebih terang - sinkron dengan #100f1b)
+5. **#140a1f** (keunguan terang - sinkron dengan #0c0615)
+
+---
+
+### Implementasi dalam Mode (Light vs Dark)
+Berikut adalah rekomendasi mode terang vs gelap berdasarkan warna-warna Anda:
+
+| **Mode Gelap (Dark Mode)** | **Mode Terang (Light Mode)** | 
+|----------------------------|------------------------------|
+| Background: #201e30       | Background: #e0e1cf         |
+| Text: #e0e1cf             | Text: #201e30              |
+| Accent: #333a46           | Accent: #ccdadc            |
+| Background: #100f1b       | Background: #eee6f5         |
+| Accent: #253441           | Accent: #cde8e9            |
+
+---
+
+### Prinsip Sinkronisasi
+1. **Mode Gelap:**
+   - Gunakan warna gelap untuk latar belakang utama.
+   - Warna terang digunakan untuk teks atau elemen yang perlu diperhatikan.
+   
+2. **Mode Terang:**
+   - Gunakan warna terang untuk latar belakang utama.
+   - Warna gelap digunakan untuk teks dan aksen agar terlihat jelas.
+
+---
+
+Jika Anda ingin, saya bisa membuat pratinjau desain atau kode CSS untuk menerapkannya!

@@ -35,19 +35,17 @@ export default function Contact() {
       setLoading(false);
       return;
     }
-
+    formData = new FormData(e.target);
+    formData.append("access_key", "935761b6-f173-494f-8d17-13798e0dfa58");
     try {
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbycK1K5NOvu0WJUJ_O9qb6lCEW4RQBZXqu9Q5VWnAgiR99Eo-tThNcOqVz9Uz7QIYSW7w/exec",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-          // mode: "no-cors",
-        }
-      );
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: formData,
+        // mode: "no-cors",
+      });
       const result = await response.json();
 
       if (result.status === "success") {

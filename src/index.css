@@ -11,6 +11,9 @@ html {
 section {
   height: 100vh;
 }
+body {
+  display: flex;
+}
 
 .header {
   padding: 1rem;
@@ -32,7 +35,7 @@ section {
 }
 /* navbar======================================== */
 #Navbar {
-  height: 10vh;
+  height: 8vh;
   background-color: #100f1b;
   position: sticky;
   top: 0;
@@ -42,7 +45,7 @@ section {
   color: white;
 }
 .navbar-wrapper {
-  padding: 20px 1rem;
+  padding: 14px 1rem;
   display: flex;
   justify-content: space-around;
   gap: 200px;
@@ -348,20 +351,23 @@ section {
 
 /* Contact ============================== */
 .contact {
-  padding-top: 70px;
-  background: transparent;
+  padding-top: 40px;
+  /* background: transparent; */
+  background-color: #201e30;
+  height: 110vh;
+  padding-bottom: 20px;
 }
 
 .contact-wrapper {
-  padding: 3rem;
-  background-color: #201e30;
+  padding: 1rem 3rem;
   width: 50%;
-  margin: auto;
+  margin-inline: auto;
   border-radius: 20px;
+  border: 3px solid white;
 }
 .contact-wrapper h4 {
   color: white;
-  font-size: x-large;
+  font-size: large;
   letter-spacing: 3px;
   text-transform: uppercase;
   text-align: center;
@@ -380,7 +386,8 @@ section {
 }
 .form-wrapper label {
   color: white;
-  margin-block: 10px;
+  margin-block: 5px;
+  font-size: small;
 }
 .form-wrapper input {
   background: transparent;
@@ -390,6 +397,8 @@ section {
   border-right: none;
   outline: none;
   color: white;
+  letter-spacing: 2px;
+  padding-block: 5px;
 }
 
 .form-wrapper textarea {
@@ -398,6 +407,7 @@ section {
   height: 20vh;
   border-radius: 10px;
   padding: 1rem;
+  letter-spacing: 2px;
 }
 
 .form-wrapper textarea::placeholder {
@@ -443,4 +453,42 @@ section {
 .contact-wrapper p {
   color: white;
   letter-spacing: 3px;
+  /* font-size: 60%; */
+  text-align: center;
+}
+
+/* Footer ============================= */
+#Footer {
+  background-color: #100f1b;
+  height: 10.5vh;
+  margin: 0;
+  /* padding: 10px; */
+}
+.footer-wrapper {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+.footer-content a {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: white;
+  /* text-decoration: none; */
+  cursor: pointer;
+}
+
+.email-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-content-mid {
+  color: white;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.footer-content-mid span {
+  font-size: smaller;
 }

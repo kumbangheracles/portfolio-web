@@ -29,14 +29,15 @@
     width: 0;
     right: 0;
     top: 3vh;
-    height: 98vh;
+    height: 97vh;
     /* transform: translateX(100%); */
     transition: 0.5s;
     background-color: #100f1b;
+    font-size: smaller;
     /* display: none; */
   }
   .nav-links li {
-    margin-block: 15px;
+    margin-block: 8px;
   }
   .li-non {
     display: none;
@@ -78,7 +79,7 @@
   /* Project ======================== */
   #Project {
     padding-top: 50px;
-    height: auto;
+    height: 110vh;
   }
   .project-wrapper h4 {
     left: 15%;
@@ -100,9 +101,23 @@
   }
   .contact-wrapper {
     width: 80%;
+    padding: 12px;
   }
   .form-wrapper button {
     width: 38%;
+  }
+
+  /* footer */
+  #Footer {
+    font-size: smaller;
+  }
+  .email-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .contact-wrapper p {
+    font-size: smaller;
   }
 }
 .nav-active {
@@ -139,9 +154,10 @@
     transition: 0.5s;
     background-color: #100f1b;
     /* display: none; */
+    font-size: smaller;
   }
   .nav-links li {
-    margin-block: 15px;
+    margin-block: 10px;
   }
   .li-non {
     display: none;
@@ -150,7 +166,13 @@
     display: block;
     z-index: 10;
   }
+  .navbar-wrapper {
+    padding: 8px 8px;
+  }
 
+  #Project {
+    height: 120vh;
+  }
   .contact {
     height: auto;
   }
@@ -159,5 +181,30 @@
   }
   .form-wrapper button {
     width: 38%;
+  }
+
+  /* footer */
+  #Footer {
+    padding-bottom: 1rem;
+    font-size: small;
+  }
+}
+
+@media (max-width: 520px) {
+  #Footer {
+    font-size: smaller;
+    height: auto;
+  }
+  .footer-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .email-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .footer-content-mid {
+    flex-direction: column;
   }
 }

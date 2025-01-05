@@ -33,9 +33,10 @@
     transition: 0.5s;
     background-color: #100f1b;
     /* display: none; */
+    font-size: smaller;
   }
   .nav-links li {
-    margin-block: 15px;
+    margin-block: 5px;
   }
   .li-non {
     display: none;
@@ -76,7 +77,8 @@
   /* Project ======================== */
   #Project {
     padding-top: 50px;
-    height: 120vh;
+    height: auto;
+    padding-bottom: 10px;
   }
   .project-wrapper h4 {
     left: 10%;
@@ -94,6 +96,9 @@
     width: 15vh;
     height: 15vh;
   }
+  #project-item {
+    width: auto;
+  }
   .project-list span {
     font-size: 0.7rem;
   }
@@ -106,11 +111,17 @@
   }
   .contact-wrapper {
     width: 80%;
+    padding: 10px;
   }
   .form-wrapper button {
     width: 40%;
-    font-size: 10px;
+    font-size: 6px;
   }
+  .contact-wrapper p {
+    font-size: x-small;
+  }
+
+  /* footer */
 }
 .nav-active {
   width: 48%;
@@ -128,27 +139,31 @@
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
-@media (min-width: 0px) and (max-width: 350px) {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+@media (min-width: 0px) and (max-width: 360px) {
   body {
     overflow-x: hidden;
+    display: flex;
+    /* flex-wrap: wrap; */
+    background-color: #100f1b;
   }
+  /* .background {
+    display: flex;
+    flex-wrap: wrap;
+    outline: none;
+  } */
   .header h4 {
     font-size: 1rem;
   }
   .header {
     text-align: center;
+    display: flex;
   }
   .header span {
     font-size: 0.5rem;
   }
   /* navbar============= */
   #Navbar {
-    height: 9vh;
+    height: 7vh;
   }
   .navbar-wrapper {
     font-size: small;
@@ -176,8 +191,9 @@
     display: none;
   }
   .burger {
-    display: block;
+    /* display: block; */
     z-index: 10;
+    display: none;
   }
   /* about ================*/
   #About {
@@ -228,6 +244,7 @@
   #Project {
     padding-top: 50px;
     height: auto;
+    padding-bottom: 10px;
   }
   .project-wrapper h4 {
     left: 10%;
@@ -263,10 +280,14 @@
     height: auto;
   }
   .contact-wrapper {
-    width: 80%;
+    width: 90%;
+    padding: 10px;
   }
   .form-wrapper button {
     width: 50%;
     font-size: 10px;
+  }
+  .contact-wrapper {
+    font-size: xx-small;
   }
 }

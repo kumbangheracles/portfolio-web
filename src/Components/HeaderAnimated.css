@@ -3,7 +3,11 @@
     transform: translate3d(0, 0, 1px) rotate(360deg);
   }
 }
-
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 .background {
   position: fixed;
   width: 100vw;
