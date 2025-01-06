@@ -3,11 +3,18 @@ import "/github_connect.svg";
 import "/linkedin.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import CV from "../assets/CV/CV.pdf";
 export default function AboutBtnConnect() {
+  function handleDownload() {
+    const link = document.createElement("a");
+    link.href = CV;
+    link.download = "Ahmad_Herkal_Taqyudin.pdf";
+    link.click();
+  }
   return (
     <div className="about-btn-connect">
       <div className="button-desc-about">
-        <button>CV</button>
+        <button onClick={handleDownload}>CV</button>
       </div>
       <div className="connect-icon">
         <a href="https://github.com/kumbangheracles" target="_blank">
