@@ -37,17 +37,17 @@ const projectData = [
   {
     id: 6,
     name: "Quiz-App",
-    icon: "./ProjectIcon/quiz-app.svg",
-    bg: "#118B50",
+    icon: "./ProjectIcon/quizIcon.png",
+    bg: "#C2D6FF",
     src: "https://github.com/kumbangheracles/quiz-app",
   },
-  {
-    id: 7,
-    name: "Movie-Library",
-    icon: "./ProjectIcon/quiz-app.svg",
-    bg: "#118B50",
-    src: "https://github.com/kumbangheracles/quiz-app",
-  },
+  // {
+  //   id: 7,
+  //   name: "Movie-Library",
+  //   icon: "./ProjectIcon/quiz-app.svg",
+  //   bg: "#118B50",
+  //   src: "https://github.com/kumbangheracles/quiz-app",
+  // },
 ];
 
 export { projectData };

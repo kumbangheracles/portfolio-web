@@ -3,7 +3,7 @@ import "/github_connect.svg";
 import "/linkedin.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
-import CV from "../assets/CV/CV.pdf";
+import CV from "../assets/CV/CV 2025.pdf";
 export default function AboutBtnConnect() {
   function handleDownload() {
     const link = document.createElement("a");
