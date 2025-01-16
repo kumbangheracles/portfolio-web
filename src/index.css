@@ -256,6 +256,7 @@ body {
 #Project {
   background-color: #333a46;
   padding-top: 70px;
+  height: 140vh;
 }
 .project-wrapper {
   padding: 1rem;

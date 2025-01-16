@@ -22,7 +22,7 @@ const projectData = [
   },
   {
     id: 4,
-    name: "BookShelf-App",
+    name: "MyBook",
     icon: "./ProjectIcon/bookshelf-app.svg",
     bg: "#95c4ff",
     src: "https://github.com/kumbangheracles/bookshelf-app",
@@ -37,6 +37,13 @@ const projectData = [
   {
     id: 6,
     name: "Quiz-App",
+    icon: "./ProjectIcon/quiz-app.svg",
+    bg: "#118B50",
+    src: "https://github.com/kumbangheracles/quiz-app",
+  },
+  {
+    id: 7,
+    name: "Movie-Library",
     icon: "./ProjectIcon/quiz-app.svg",
     bg: "#118B50",
     src: "https://github.com/kumbangheracles/quiz-app",
