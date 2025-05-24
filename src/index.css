@@ -8,13 +8,14 @@
 html {
   scroll-behavior: smooth;
 }
-section {
-  height: 100vh;
-}
+
 body {
   display: flex;
 }
 
+section {
+  height: auto;
+}
 .header {
   padding: 1rem;
   background: transparent;
@@ -102,8 +103,7 @@ body {
   background-color: #253441;
 }
 #About {
-  height: 100vh;
-  padding-top: 80px;
+  padding-top: 10px;
 }
 .about-wrapper {
   padding: 1rem;
@@ -256,7 +256,8 @@ body {
 #Project {
   background-color: #333a46;
   padding-top: 70px;
-  height: 140vh;
+  height: auto;
+  padding-bottom: 10px;
 }
 .project-wrapper {
   padding: 1rem;

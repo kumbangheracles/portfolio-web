@@ -78,8 +78,8 @@
 
   /* Project ======================== */
   #Project {
-    padding-top: 50px;
-    height: 110vh;
+    height: auto;
+    padding-bottom: 10px;
   }
   .project-wrapper h4 {
     left: 15%;
@@ -171,7 +171,8 @@
   }
 
   #Project {
-    height: 120vh;
+    height: auto;
+    padding-bottom: 20px;
   }
   .contact {
     height: auto;
