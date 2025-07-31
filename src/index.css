@@ -195,20 +195,17 @@ section {
 }
 .skill-list {
   display: grid;
-  grid-template-columns: repeat(
-    3,
-    auto
-  ); /* Tiga baris dengan tinggi otomatis */
-  gap: 10px; /* Jarak antar elemen */
-  justify-content: center; /* Pusatkan elemen secara horizontal */
-  align-items: center; /* Pusatkan elemen secara vertikal */
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  justify-items: center;
+  align-items: center;
 }
 
 .skill-list span {
   padding: 8px 16px;
-  background-color: #201e30; /* Warna latar untuk elemen */
-  color: white; /* Warna teks */
-  border-radius: 8px; /* Membuat sudut elemen melengkung */
+  background-color: #201e30;
+  color: white;
+  border-radius: 8px;
   text-align: center;
   font-size: 14px;
   width: 100px;
