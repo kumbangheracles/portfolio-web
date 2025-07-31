@@ -104,6 +104,7 @@ section {
 }
 #About {
   padding-top: 10px;
+  overflow-x: hidden;
 }
 .about-wrapper {
   padding: 1rem;
@@ -255,6 +256,7 @@ section {
   padding-top: 70px;
   height: auto;
   padding-bottom: 10px;
+  overflow-x: hidden;
 }
 .project-wrapper {
   padding: 1rem;
