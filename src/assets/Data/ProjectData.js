@@ -29,10 +29,10 @@ const projectData = [
   },
   {
     id: 5,
-    name: "Todo-List-App",
-    icon: "./ProjectIcon/todo.svg",
-    bg: "#95c4ff",
-    src: "https://github.com/kumbangheracles/to-do-list-web",
+    name: "Contact App",
+    icon: "./ProjectIcon/contact-app.svg",
+    bg: "#174bfe",
+    src: "https://github.com/kumbangheracles/contact-app",
   },
   {
     id: 6,
