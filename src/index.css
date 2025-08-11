@@ -9,10 +9,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  display: flex;
-}
-
 section {
   height: auto;
 }
@@ -196,7 +192,7 @@ section {
 }
 .skill-list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
   gap: 16px;
   justify-items: center;
   align-items: center;
