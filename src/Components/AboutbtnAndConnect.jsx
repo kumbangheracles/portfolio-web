@@ -3,12 +3,12 @@ import "/github_connect.svg";
 import "/linkedin.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
-import CV from "../assets/CV/CV 11 August 2025.pdf";
+import CV from "../assets/CV/CV 29 August 2025.pdf";
 export default function AboutBtnConnect() {
   function handleDownload() {
     const link = document.createElement("a");
     link.href = CV;
-    link.download = "Ahmad_Herkal_Taqyudin.pdf";
+    link.download = "Ahmad_Herkal_Taqyudin_CV.pdf";
     link.click();
   }
   return (
